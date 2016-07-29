@@ -54,7 +54,11 @@ function submitActionkitForm(domain, pageName, data, callback) {
             window.location.hash, "").replace(/\#$/, "") + 
           "#processActionkitFormResponse" + callback_name)
     .appendTo(form);
-  $("<input>").attr("name", "page").attr("value", pageName).appendTo(form);
+  var pageInput = $(form).find("input[name=page]");
+  if (pageInput.length === 0) {
+    $("<input>").attr("name", "page").appendTo(form);
+  }
+  pageInput.attr("value", pageName);
   form.attr("action", "https://" + domain + "/act/");
   form.submit();
   form.remove();
