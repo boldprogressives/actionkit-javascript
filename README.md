@@ -5,6 +5,7 @@ with no specific expectations about how your HTML is structured.
 
 Usage:
 
+```
 var data = {
   "email": "joe@example.com",
   "name": "Joe Smith",
@@ -21,3 +22,4 @@ function myCallback(result, data) {
 };
 
 submitActionKitForm("https://act.example.com", "my-page-name", data, myCallback);
+```
